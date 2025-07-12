@@ -3,13 +3,15 @@ import os
 import csv
 
 
-def find_jobs(query: str, query_not: str = '', age: int = 7):
+def find_jobs(query: str, query_not: str = '', n_results: int = 50, age: int = 7):
+    # pages = n_results/50 -> round up
+
     url = "https://api.adzuna.com/v1/api/jobs/us/search/1"
 
     params = {
         "app_id": "2468334f",
         "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
-        "results_per_page": 1000,
+        "results_per_page": 50,
         "what": query,
         "max_days_old": age
     }
@@ -65,3 +67,6 @@ def find_jobs(query: str, query_not: str = '', age: int = 7):
                 writer.writerows(jobs)
     else:
         print(f'No jobs found for {search}. Try expanding your search.')
+
+
+find_jobs('software engineer', 'senior sr sr. Senior Sr Sr.')
