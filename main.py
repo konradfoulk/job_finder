@@ -1,11 +1,12 @@
 import requests
+import json
 
 url = "https://active-jobs-db.p.rapidapi.com/active-ats-7d"
 
 querystring = {
     "limit": "10",
     "offset": "0",
-    "advanced_title_filter": "(developer | 'software engineer' | (('full stack' | frontend | backend) & engineer)) & ! (senior | sr)",
+    "advanced_title_filter": "developer | 'software engineer' | (('full stack' | frontend | backend) & engineer)",
     "location_filter": "\"United States\"",
     "description_type": "text",
     "include_ai": "true",
@@ -21,4 +22,6 @@ headers = {
 
 response = requests.get(url, headers=headers, params=querystring)
 
-print(response.json())
+data = response.json()
+with open("fantastic_response.json", "w") as f:
+    json.dump(data, f, indent=4)
