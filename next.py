@@ -30,8 +30,8 @@ def format_job_list(data):
     return jobs
 
 
-def write_to_csv(job_list, search):
-    path = 'jobs.csv'
+def write_to_csv(file_name, job_list, search):
+    path = f'{file_name}.csv'
     if job_list:
         fieldnames = job_list[0].keys()
         if os.path.exists(path):
@@ -63,7 +63,7 @@ def write_to_csv(job_list, search):
         print(f'No jobs found for {search}. Try expanding your search.')
 
 
-def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
+def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs'):
     params = {
         "app_id": "2468334f",
         "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
@@ -80,7 +80,7 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
 
     results = get_jobs(params, pages)
     jobs = format_job_list(results)
-    write_to_csv(jobs, search)
+    write_to_csv(name, jobs, search)
 
 
 find_jobs('junior software engineer', 'senior Senior sr sr. Sr Sr.', 10)
