@@ -3,6 +3,21 @@ import os
 import csv
 
 
+def format_job_list(data):
+    jobs = []
+    for i in data:
+        job = {}
+        job['id'] = i['id']
+        job['title'] = i.get('title', '').replace(
+            '\u272a', '').replace('\u200b', '')
+        job['company'] = i['company'].get('display_name', '').replace(
+            '\u272a', '').replace('\u200b', '')
+        job['url'] = i.get('redirect_url', '')
+        jobs.append(job)
+
+    return jobs
+
+
 def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
     params = {
         "app_id": "2468334f",
@@ -18,24 +33,17 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
     else:
         search = query
 
-    jobs = []
+    results = []
     for page in range(1, pages+1):
         url = f"https://api.adzuna.com/v1/api/jobs/us/search/{page}"
 
         response = requests.get(url, params=params)
         data = response.json()
-        results = data['results']
+        results.extend(data['results'])
 
-        for i in results:
-            job = {}
-            job['id'] = i['id']
-            job['title'] = i.get('title', '').replace(
-                '\u272a', '').replace('\u200b', '')
-            job['company'] = i['company'].get('display_name', '').replace(
-                '\u272a', '').replace('\u200b', '')
-            job['url'] = i.get('redirect_url', '')
-            jobs.append(job)
+    jobs = format_job_list(results)
 
+    # this could be its own function and you could just work with the lists from find_jobs
     path = 'jobs.csv'
     if jobs:
         fieldnames = jobs[0].keys()

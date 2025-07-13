@@ -1,5 +1,6 @@
 id,title,company,url
 5291624986,Junior Software Engineer (Java),Paysafe Group,https://www.adzuna.com/details/5291624986?utm_medium=api&utm_source=2468334f
+5300554781,Junior Software Engineer (SWE1),Nightwing Intelligence Solutions,https://www.adzuna.com/details/5300554781?utm_medium=api&utm_source=2468334f
 5296647553,Junior Java Software Engineer,Digital Turbine,https://www.adzuna.com/details/5296647553?utm_medium=api&utm_source=2468334f
 5296186690,Junior Java Software Engineer - TS/SCI FSP,Mission Box Solutions,https://www.adzuna.com/details/5296186690?utm_medium=api&utm_source=2468334f
 5298226791,Software Engineer Junior,Mlt Systems,https://www.adzuna.com/details/5298226791?utm_medium=api&utm_source=2468334f
@@ -8,58 +9,59 @@ id,title,company,url
 5297825986,Junior Full Stack Software Engineer,"AccordWare, LLC.",https://www.adzuna.com/details/5297825986?utm_medium=api&utm_source=2468334f
 5288603011,Software Engineer I,Prodigy One,https://www.adzuna.com/details/5288603011?utm_medium=api&utm_source=2468334f
 5297743362,Mainframe Support,Stellent IT LLC,https://www.adzuna.com/details/5297743362?utm_medium=api&utm_source=2468334f
+5288453055,Software Engineer - Robotics,Revel Staffing,https://www.adzuna.com/details/5288453055?utm_medium=api&utm_source=2468334f
 5295527661,Software Engineer,Meta,https://www.adzuna.com/details/5295527661?utm_medium=api&utm_source=2468334f
 5294755950,Software Engineer (Level 2/Junior Level),Lockheed Martin,https://www.adzuna.com/details/5294755950?utm_medium=api&utm_source=2468334f
-5299570706,Automated Logic Technician,CareerPaths NW,https://www.adzuna.com/land/ad/5299570706?se=SMUgkolf8BGF0MrxPjRF3A&utm_medium=api&utm_source=2468334f&v=93D781AF838CC035B8D8E8B40447C249044BB88D
 5296203571,Lead AI/ML Engineer,Wells Fargo Bank,https://www.adzuna.com/details/5296203571?utm_medium=api&utm_source=2468334f
 5294874671,Staff Software Engineer,Vasion,https://www.adzuna.com/details/5294874671?utm_medium=api&utm_source=2468334f
-5294771178,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294771178?utm_medium=api&utm_source=2468334f
-5295847113,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295847113?utm_medium=api&utm_source=2468334f
-5294687775,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294687775?utm_medium=api&utm_source=2468334f
-5294792165,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294792165?utm_medium=api&utm_source=2468334f
-5294681493,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681493?utm_medium=api&utm_source=2468334f
-5294754659,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294754659?utm_medium=api&utm_source=2468334f
-5294679630,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294679630?utm_medium=api&utm_source=2468334f
-5294398189,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294398189?utm_medium=api&utm_source=2468334f
-5294782676,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294782676?utm_medium=api&utm_source=2468334f
-5294774252,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294774252?utm_medium=api&utm_source=2468334f
-5294776486,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294776486?utm_medium=api&utm_source=2468334f
-5294681667,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681667?utm_medium=api&utm_source=2468334f
-5294706894,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294706894?utm_medium=api&utm_source=2468334f
-5294143376,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294143376?utm_medium=api&utm_source=2468334f
-5294353424,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294353424?utm_medium=api&utm_source=2468334f
-5294686300,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294686300?utm_medium=api&utm_source=2468334f
-5295848629,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295848629?utm_medium=api&utm_source=2468334f
-5294678288,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294678288?utm_medium=api&utm_source=2468334f
-5294680635,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294680635?utm_medium=api&utm_source=2468334f
+5294338538,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294338538?utm_medium=api&utm_source=2468334f
+5294717363,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294717363?utm_medium=api&utm_source=2468334f
+5294685572,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294685572?utm_medium=api&utm_source=2468334f
 5294711896,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294711896?utm_medium=api&utm_source=2468334f
 5295679538,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295679538?utm_medium=api&utm_source=2468334f
-5294793604,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294793604?utm_medium=api&utm_source=2468334f
 5294709711,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294709711?utm_medium=api&utm_source=2468334f
-5294338538,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294338538?utm_medium=api&utm_source=2468334f
-5294769270,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294769270?utm_medium=api&utm_source=2468334f
-5294684079,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294684079?utm_medium=api&utm_source=2468334f
-5294663130,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294663130?utm_medium=api&utm_source=2468334f
-5294658379,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294658379?utm_medium=api&utm_source=2468334f
-5294658511,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294658511?utm_medium=api&utm_source=2468334f
-5294347101,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294347101?utm_medium=api&utm_source=2468334f
-5294717363,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294717363?utm_medium=api&utm_source=2468334f
-5294668870,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294668870?utm_medium=api&utm_source=2468334f
-5295680941,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295680941?utm_medium=api&utm_source=2468334f
-5294773254,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294773254?utm_medium=api&utm_source=2468334f
-5294799723,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294799723?utm_medium=api&utm_source=2468334f
-5294773813,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294773813?utm_medium=api&utm_source=2468334f
-5294810113,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294810113?utm_medium=api&utm_source=2468334f
-5294681975,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681975?utm_medium=api&utm_source=2468334f
+5294681667,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681667?utm_medium=api&utm_source=2468334f
 5294364982,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294364982?utm_medium=api&utm_source=2468334f
-5294710374,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294710374?utm_medium=api&utm_source=2468334f
-5294659448,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294659448?utm_medium=api&utm_source=2468334f
-5294685572,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294685572?utm_medium=api&utm_source=2468334f
-5294657622,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294657622?utm_medium=api&utm_source=2468334f
+5294773254,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294773254?utm_medium=api&utm_source=2468334f
 5294662095,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294662095?utm_medium=api&utm_source=2468334f
+5294347101,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294347101?utm_medium=api&utm_source=2468334f
+5294774252,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294774252?utm_medium=api&utm_source=2468334f
+5294681975,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681975?utm_medium=api&utm_source=2468334f
+5294678288,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294678288?utm_medium=api&utm_source=2468334f
+5294658511,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294658511?utm_medium=api&utm_source=2468334f
+5294710374,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294710374?utm_medium=api&utm_source=2468334f
+5294663130,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294663130?utm_medium=api&utm_source=2468334f
+5295680941,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295680941?utm_medium=api&utm_source=2468334f
+5294686300,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294686300?utm_medium=api&utm_source=2468334f
+5294687775,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294687775?utm_medium=api&utm_source=2468334f
+5294681493,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294681493?utm_medium=api&utm_source=2468334f
+5294769270,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294769270?utm_medium=api&utm_source=2468334f
+5294754659,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294754659?utm_medium=api&utm_source=2468334f
+5294657622,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294657622?utm_medium=api&utm_source=2468334f
+5294353424,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294353424?utm_medium=api&utm_source=2468334f
+5294668870,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294668870?utm_medium=api&utm_source=2468334f
+5294658379,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294658379?utm_medium=api&utm_source=2468334f
+5294771178,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294771178?utm_medium=api&utm_source=2468334f
+5294143376,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294143376?utm_medium=api&utm_source=2468334f
+5294659448,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294659448?utm_medium=api&utm_source=2468334f
+5294680635,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294680635?utm_medium=api&utm_source=2468334f
+5294679630,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294679630?utm_medium=api&utm_source=2468334f
+5295847113,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295847113?utm_medium=api&utm_source=2468334f
+5294398189,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294398189?utm_medium=api&utm_source=2468334f
+5294810113,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294810113?utm_medium=api&utm_source=2468334f
+5294792165,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294792165?utm_medium=api&utm_source=2468334f
+5294684079,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294684079?utm_medium=api&utm_source=2468334f
+5294776486,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294776486?utm_medium=api&utm_source=2468334f
+5294782676,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294782676?utm_medium=api&utm_source=2468334f
+5295848629,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5295848629?utm_medium=api&utm_source=2468334f
+5294706894,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294706894?utm_medium=api&utm_source=2468334f
+5294793604,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294793604?utm_medium=api&utm_source=2468334f
+5294773813,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294773813?utm_medium=api&utm_source=2468334f
+5294799723,Principal Software Development Engineer - OCI (Austin-TX or Nashville-TN),Oracle,https://www.adzuna.com/details/5294799723?utm_medium=api&utm_source=2468334f
 5300220536,Automated Logic Technician,CareerPaths NW,https://www.adzuna.com/details/5300220536?utm_medium=api&utm_source=2468334f
 5298606588,Systems Software Engineer II,CareerPaths NW,https://www.adzuna.com/details/5298606588?utm_medium=api&utm_source=2468334f
 5300220540,Tridium Niagara Technician,CareerPaths NW,https://www.adzuna.com/details/5300220540?utm_medium=api&utm_source=2468334f
+5300510995,Systems Software Engineer II,CareerPaths NW,https://www.adzuna.com/details/5300510995?utm_medium=api&utm_source=2468334f
 5296831715,"Software Development Engineer, Elastic Load Balancing",Amazon,https://www.adzuna.com/details/5296831715?utm_medium=api&utm_source=2468334f
 5294683395,FAST Labs - Experienced Software Engineer,BAE Systems,https://www.adzuna.com/details/5294683395?utm_medium=api&utm_source=2468334f
 5288882903,GIS Developer- Junior,"CGI Technologies and Solutions, Inc.",https://www.adzuna.com/details/5288882903?utm_medium=api&utm_source=2468334f
@@ -71,7 +73,9 @@ id,title,company,url
 5294774336,Network Engineer L2 RB - TS/SCI Poly required,Emtak,https://www.adzuna.com/details/5294774336?utm_medium=api&utm_source=2468334f
 5296856046,Network Engineer 2 - Arista/Cisco/Wireshark,Captivation Software,https://www.adzuna.com/details/5296856046?utm_medium=api&utm_source=2468334f
 5296688100,Vehicle Perception Integration Engineer,Woven,https://www.adzuna.com/details/5296688100?utm_medium=api&utm_source=2468334f
+5297550195,Software Engineer,JPMorgan Chase,https://www.adzuna.com/details/5297550195?utm_medium=api&utm_source=2468334f
 5298699416,Principal Software Quality Assurance Engineer (Hybrid),RTX,https://www.adzuna.com/details/5298699416?utm_medium=api&utm_source=2468334f
 5294658659,Principal Software Quality Assurance Engineer (Hybrid),RTX Corporation,https://www.adzuna.com/details/5294658659?utm_medium=api&utm_source=2468334f
 5300212433,"Principal Member of Technical Staff, AI Infrastructure",Oracle,https://www.adzuna.com/details/5300212433?utm_medium=api&utm_source=2468334f
+5300760925,"Principal Member of Technical Staff, AI Infrastructure",Oracle,https://www.adzuna.com/details/5300760925?utm_medium=api&utm_source=2468334f
 5288571550,Modernization Cyber Network Engineer - NE2,Lockheed Martin,https://www.adzuna.com/details/5288571550?utm_medium=api&utm_source=2468334f
