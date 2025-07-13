@@ -3,6 +3,18 @@ import os
 import csv
 
 
+def get_jobs(params, pages):
+    results = []
+    for page in range(1, pages+1):
+        url = f"https://api.adzuna.com/v1/api/jobs/us/search/{page}"
+
+        response = requests.get(url, params=params)
+        data = response.json()
+        results.extend(data['results'])
+
+    return results
+
+
 def format_job_list(data):
     jobs = []
     for i in data:
@@ -66,14 +78,7 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
     else:
         search = query
 
-    results = []
-    for page in range(1, pages+1):
-        url = f"https://api.adzuna.com/v1/api/jobs/us/search/{page}"
-
-        response = requests.get(url, params=params)
-        data = response.json()
-        results.extend(data['results'])
-
+    results = get_jobs(params, pages)
     jobs = format_job_list(results)
     write_to_csv(jobs, search)
 
