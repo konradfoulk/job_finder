@@ -18,6 +18,39 @@ def format_job_list(data):
     return jobs
 
 
+def write_to_csv(job_list, search):
+    path = 'jobs.csv'
+    if job_list:
+        fieldnames = job_list[0].keys()
+        if os.path.exists(path):
+            new_jobs = []
+
+            with open(path, 'r') as f:
+                reader = csv.DictReader(f, fieldnames)
+                existing_ids = [i['id'] for i in reader]
+
+                for i in job_list:
+                    if i['id'] not in existing_ids:
+                        new_jobs.append(i)
+
+            if new_jobs:
+                with open(path, 'a', newline='') as f:
+                    writer = csv.DictWriter(f, fieldnames)
+
+                    writer.writerows(new_jobs)
+            else:
+                print(
+                    f'No new jobs found for {search}. Try expanding your search.')
+        else:
+            with open(path, 'w', newline='') as f:
+                writer = csv.DictWriter(f, fieldnames)
+
+                writer.writeheader()
+                writer.writerows(job_list)
+    else:
+        print(f'No jobs found for {search}. Try expanding your search.')
+
+
 def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
     params = {
         "app_id": "2468334f",
@@ -42,38 +75,7 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
         results.extend(data['results'])
 
     jobs = format_job_list(results)
-
-    # this could be its own function and you could just work with the lists from find_jobs
-    path = 'jobs.csv'
-    if jobs:
-        fieldnames = jobs[0].keys()
-        if os.path.exists(path):
-            new_jobs = []
-
-            with open(path, 'r') as f:
-                reader = csv.DictReader(f, fieldnames)
-                existing_ids = [i['id'] for i in reader]
-
-                for i in jobs:
-                    if i['id'] not in existing_ids:
-                        new_jobs.append(i)
-
-            if new_jobs:
-                with open(path, 'a', newline='') as f:
-                    writer = csv.DictWriter(f, fieldnames)
-
-                    writer.writerows(new_jobs)
-            else:
-                print(
-                    f'No new jobs found for {search}. Try expanding your search.')
-        else:
-            with open(path, 'w', newline='') as f:
-                writer = csv.DictWriter(f, fieldnames)
-
-                writer.writeheader()
-                writer.writerows(jobs)
-    else:
-        print(f'No jobs found for {search}. Try expanding your search.')
+    write_to_csv(jobs, search)
 
 
 find_jobs('junior software engineer', 'senior Senior sr sr. Sr Sr.', 10)
