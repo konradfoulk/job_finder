@@ -3,6 +3,24 @@ import os
 import csv
 
 
+def update_params(query, query_not, age):
+    params = {
+        "app_id": "2468334f",
+        "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
+        "results_per_page": 50,
+        'what': query,
+        'max_days_old': age
+    }
+
+    if query_not:
+        params['what_exclude'] = query_not
+        search = query + ' not ' + query_not
+    else:
+        search = query
+
+    return params, search
+
+
 def get_jobs(params, pages):
     results = []
     for page in range(1, pages+1):
@@ -30,7 +48,7 @@ def format_job_list(data):
     return jobs
 
 
-def write_to_csv(file_name, job_list, search):
+def output_to_csv(file_name, job_list, search):
     path = f'{file_name}.csv'
     if job_list:
         fieldnames = job_list[0].keys()
@@ -64,23 +82,15 @@ def write_to_csv(file_name, job_list, search):
 
 
 def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs'):
-    params = {
-        "app_id": "2468334f",
-        "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
-        "results_per_page": 50,
-        "what": query,
-        "max_days_old": age
-    }
-
-    if query_not:
-        params['what_exclude'] = query_not
-        search = query + ' not ' + query_not
-    else:
-        search = query
+    params, search = update_params(query, query_not, age)
 
     results = get_jobs(params, pages)
     jobs = format_job_list(results)
-    write_to_csv(name, jobs, search)
+    output_to_csv(name, jobs, search)
+
+
+def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs', ai_remote: bool = False, ai_experience: tuple = None):
+    pass
 
 
 find_jobs('junior software engineer', 'senior Senior sr sr. Sr Sr.', 10)
