@@ -3,11 +3,7 @@ import os
 import csv
 
 
-def find_jobs(query: str, query_not: str = '', n_results: int = 50, age: int = 7):
-    # pages = n_results/50 -> round up
-
-    url = "https://api.adzuna.com/v1/api/jobs/us/search/1"
-
+def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7):
     params = {
         "app_id": "2468334f",
         "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
@@ -22,20 +18,23 @@ def find_jobs(query: str, query_not: str = '', n_results: int = 50, age: int = 7
     else:
         search = query
 
-    response = requests.get(url, params=params)
-    data = response.json()
-    results = data['results']
-
     jobs = []
-    for i in results:
-        job = {}
-        job['id'] = i['id']
-        job['title'] = i.get('title', '').replace(
-            '\u272a', '').replace('\u200b', '')
-        job['company'] = i['company'].get('display_name', '').replace(
-            '\u272a', '').replace('\u200b', '')
-        job['url'] = i.get('redirect_url', '')
-        jobs.append(job)
+    for page in range(1, pages+1):
+        url = f"https://api.adzuna.com/v1/api/jobs/us/search/{page}"
+
+        response = requests.get(url, params=params)
+        data = response.json()
+        results = data['results']
+
+        for i in results:
+            job = {}
+            job['id'] = i['id']
+            job['title'] = i.get('title', '').replace(
+                '\u272a', '').replace('\u200b', '')
+            job['company'] = i['company'].get('display_name', '').replace(
+                '\u272a', '').replace('\u200b', '')
+            job['url'] = i.get('redirect_url', '')
+            jobs.append(job)
 
     path = 'jobs.csv'
     if jobs:
@@ -69,4 +68,7 @@ def find_jobs(query: str, query_not: str = '', n_results: int = 50, age: int = 7
         print(f'No jobs found for {search}. Try expanding your search.')
 
 
-find_jobs('software engineer', 'senior sr sr. Senior Sr Sr.')
+find_jobs('junior software engineer', 'senior Senior sr sr. Sr Sr.', 10)
+
+# find_jobs finds jobs for the us and outputs a CSV file as well as statuses for failed searches
+# can easily script multiple searches by adding multiple funtion calls
