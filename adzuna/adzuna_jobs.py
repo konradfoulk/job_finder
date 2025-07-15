@@ -35,6 +35,7 @@ def format_job_list(data):
     jobs = []
     for i in data:
         job = {}
+
         job['id'] = i['id']
         job['title'] = i.get('title', '').replace(
             '\u272a', '').replace('\u200b', '')
