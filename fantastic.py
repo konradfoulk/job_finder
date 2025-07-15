@@ -72,9 +72,3 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
                 writer.writerows(jobs)
     else:
         print(f'No jobs found. Try expanding your search.')
-
-
-# test
-# find_jobs('developer | \'software engineer\' | ((\'full stack\' | frontend | backend) & engineer)',
-#           'Remote OK,Remote Solely', '0-2')
-# developer | 'software engineer' | (('full stack' | frontend | backend) & engineer)
