@@ -1,22 +1,9 @@
-from enum import Enum
-from pydantic import BaseModel
 from openai import OpenAI
 import requests
 import os
 import csv
 from bs4 import BeautifulSoup
-
-
-class Experience(str, Enum):
-    entry = 'entry'
-    mid = 'mid'
-    senior = 'senior'
-
-
-class AiResponse(BaseModel):
-    remote: bool
-    experience: Experience
-
+from models import AiResponse
 
 ai = OpenAI()
 
@@ -112,7 +99,6 @@ def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: in
     ai_results = []
     for i in results:
         url = i['redirect_url']
-        print(url)  # test
         page = requests.get(url)
         soup = BeautifulSoup(page.text, 'html.parser')
         desc = str(soup.find(class_='adp-body'))
