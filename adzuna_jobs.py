@@ -1,6 +1,17 @@
+from pydantic import BaseModel
+from openai import OpenAI
 import requests
 import os
 import csv
+from bs4 import BeautifulSoup
+
+
+class AiResponse(BaseModel):
+    remote: bool
+    experience: str
+
+
+ai = OpenAI()
 
 
 def update_params(query, query_not, age):
@@ -33,6 +44,7 @@ def get_jobs(params, pages):
     return results
 
 
+# could use pydantic for this??
 def format_job_list(data):
     jobs = []
     for i in data:
@@ -42,7 +54,7 @@ def format_job_list(data):
             '\u272a', '').replace('\u200b', '')
         job['company'] = i['company'].get('display_name', '').replace(
             '\u272a', '').replace('\u200b', '')
-        job['url'] = i.get('redirect_url', '')
+        job['url'] = i['redirect_url']
         jobs.append(job)
 
     return jobs
@@ -89,11 +101,42 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, nam
     output_to_csv(name, jobs, search)
 
 
-def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs', ai_remote: bool = False, ai_experience: tuple = None):
-    pass
+def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs', ai_remote: bool = False, ai_experience: str = 'mid'):
+    params, search = update_params(query, query_not, age)
+    results = get_jobs(params, pages)
+
+    for i in results:
+        url = i['redirect_url']
+        print(url)  # test
+        page = requests.get(url)
+        soup = BeautifulSoup(page.text, 'html.parser')
+        desc = str(soup.find(class_='adp-body'))
+
+        response = ai.responses.parse(
+            model="gpt-4.1-nano-2025-04-14",
+            input=[
+                {
+                    'role': 'system',
+                    'content': '''
+                    Analyze this job description and determine whether it is a remote position and the experience level of the position. 
+                    Use the strings "entry", "mid", or "senior" to describe the experience level.
+                    '''
+                },
+                {
+                    'role': 'user',
+                    'content': f'{desc}'
+                }
+            ],
+            text_format=AiResponse
+        )
+
+        print(response.output_parsed)
+
+        # print(desc)
+        # print('\n\n[ENDOFJOB]' + str(type(desc)))
 
 
-find_jobs('junior software engineer', 'senior Senior sr sr. Sr Sr.', 10)
+find_qualified_jobs('Jr. Web Developer', pages=10)
 
 # find_jobs finds jobs for the us and outputs a CSV file as well as statuses for failed searches
 # can easily script multiple searches by adding multiple funtion calls
