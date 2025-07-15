@@ -1,3 +1,4 @@
+from enum import Enum
 from pydantic import BaseModel
 from openai import OpenAI
 import requests
@@ -6,9 +7,15 @@ import csv
 from bs4 import BeautifulSoup
 
 
+class Experience(str, Enum):
+    entry = 'entry'
+    mid = 'mid'
+    senior = 'senior'
+
+
 class AiResponse(BaseModel):
     remote: bool
-    experience: str
+    experience: Experience
 
 
 ai = OpenAI()
@@ -25,11 +32,8 @@ def update_params(query, query_not, age):
 
     if query_not:
         params['what_exclude'] = query_not
-        search = query + ' not ' + query_not
-    else:
-        search = query
 
-    return params, search
+    return params
 
 
 def get_jobs(params, pages):
@@ -60,7 +64,7 @@ def format_job_list(data):
     return jobs
 
 
-def output_to_csv(file_name, job_list, search):
+def output_to_csv(file_name, job_list):
     path = f'{file_name}.csv'
     if job_list:
         fieldnames = job_list[0].keys()
@@ -82,7 +86,7 @@ def output_to_csv(file_name, job_list, search):
                     writer.writerows(new_jobs)
             else:
                 print(
-                    f'No new jobs found for {search}. Try expanding your search.')
+                    f'No new jobs found. Try expanding your search.')
         else:
             with open(path, 'w', newline='') as f:
                 writer = csv.DictWriter(f, fieldnames)
@@ -90,53 +94,54 @@ def output_to_csv(file_name, job_list, search):
                 writer.writeheader()
                 writer.writerows(job_list)
     else:
-        print(f'No jobs found for {search}. Try expanding your search.')
+        print(f'No jobs found. Try expanding your search.')
 
 
 def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs'):
-    params, search = update_params(query, query_not, age)
+    params = update_params(query, query_not, age)
 
     results = get_jobs(params, pages)
     jobs = format_job_list(results)
-    output_to_csv(name, jobs, search)
+    output_to_csv(name, jobs)
 
 
-def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs', ai_remote: bool = False, ai_experience: str = 'mid'):
-    params, search = update_params(query, query_not, age)
+def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'ai_jobs', ai_remote: bool = False, ai_experience: str = 'mid'):
+    params = update_params(query, query_not, age)
     results = get_jobs(params, pages)
 
+    ai_results = []
     for i in results:
         url = i['redirect_url']
         print(url)  # test
         page = requests.get(url)
         soup = BeautifulSoup(page.text, 'html.parser')
         desc = str(soup.find(class_='adp-body'))
+        content = 'Title: ' + i['title'] + ' ' + desc
 
         response = ai.responses.parse(
-            model="gpt-4.1-nano-2025-04-14",
+            model="gpt-4.1-mini-2025-04-14",
             input=[
                 {
                     'role': 'system',
-                    'content': '''
-                    Analyze this job description and determine whether it is a remote position and the experience level of the position. 
-                    Use the strings "entry", "mid", or "senior" to describe the experience level.
-                    '''
+                    'content': 'Analyze this job description and determine whether it is a remote position and the experience level of the position.'
                 },
                 {
                     'role': 'user',
-                    'content': f'{desc}'
+                    'content': f'{content}'
                 }
             ],
             text_format=AiResponse
         )
 
-        print(response.output_parsed)
+        data = response.output_parsed
+        remote = data.remote
+        experience = data.experience.value
 
-        # print(desc)
-        # print('\n\n[ENDOFJOB]' + str(type(desc)))
+        if remote == ai_remote and experience == ai_experience:
+            ai_results.append(i)
 
-
-find_qualified_jobs('Jr. Web Developer', pages=10)
+    jobs = format_job_list(ai_results)
+    output_to_csv(name, jobs)
 
 # find_jobs finds jobs for the us and outputs a CSV file as well as statuses for failed searches
 # can easily script multiple searches by adding multiple funtion calls
