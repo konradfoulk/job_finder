@@ -1,8 +1,9 @@
 import requests
-from output_to_csv import output_to_csv
+import os
+import csv
 
 
-def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limit: int = 10, name: str = 'jobs'):
+def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limit: int = 10, file_name: str = 'jobs'):
     url = "https://active-jobs-db.p.rapidapi.com/active-ats-7d"
 
     querystring = {
@@ -41,6 +42,39 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
         job['url'] = i.get('url')
         jobs.append(job)
 
-    output_to_csv(name, jobs)
+    path = f'{file_name}.csv'
+    if jobs:
+        fieldnames = jobs[0].keys()
+        if os.path.exists(path):
+            new_jobs = []
 
+            with open(path, 'r') as f:
+                reader = csv.DictReader(f, fieldnames)
+                existing_ids = [i['id'] for i in reader]
+
+                for i in jobs:
+                    if i['id'] not in existing_ids:
+                        new_jobs.append(i)
+
+            if new_jobs:
+                with open(path, 'a', newline='') as f:
+                    writer = csv.DictWriter(f, fieldnames)
+
+                    writer.writerows(new_jobs)
+            else:
+                print(
+                    f'No new jobs found. Try expanding your search.')
+        else:
+            with open(path, 'w', newline='') as f:
+                writer = csv.DictWriter(f, fieldnames)
+
+                writer.writeheader()
+                writer.writerows(jobs)
+    else:
+        print(f'No jobs found. Try expanding your search.')
+
+
+# test
+# find_jobs('developer | \'software engineer\' | ((\'full stack\' | frontend | backend) & engineer)',
+#           'Remote OK,Remote Solely', '0-2')
 # developer | 'software engineer' | (('full stack' | frontend | backend) & engineer)

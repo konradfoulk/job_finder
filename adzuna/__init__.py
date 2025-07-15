@@ -52,7 +52,8 @@ def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: in
     output_to_csv(name, jobs)
 
 
-find_qualified_jobs('Jr. Web Developer', pages=10)
+# test
+# find_jobs('Jr. Web Developer', pages=10, name='adzuna_jobs')
 
 # find_jobs finds jobs for the us and outputs a CSV file as well as statuses for failed searches
 # can easily script multiple searches by adding multiple funtion calls
