@@ -28,7 +28,6 @@ def get_jobs(params, pages):
     return results
 
 
-# could use pydantic for this??
 def format_job_list(data):
     jobs = []
     for i in data:
