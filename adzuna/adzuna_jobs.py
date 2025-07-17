@@ -1,10 +1,14 @@
+from dotenv import load_dotenv
+import os
 import requests
+
+load_dotenv()
 
 
 def update_params(query, query_not, age):
     params = {
-        "app_id": "2468334f",
-        "app_key": "30cac15e7cdfa5ba0e4d5ef0b26ae978",
+        "app_id": f"{os.environ['adzuna_app_id']}",
+        "app_key": f"{os.environ['adzuna_app_key']}",
         "results_per_page": 50,
         'what': query,
         'max_days_old': age

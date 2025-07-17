@@ -1,5 +1,9 @@
+from dotenv import load_dotenv
+import os
 import requests
 from utils import output_to_csv
+
+load_dotenv()
 
 
 def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limit: int = 10, file_name: str = 'jobs'):
@@ -24,7 +28,7 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
         querystring["ai_experience_level_filter"] = ai_experience
 
     headers = {
-        "x-rapidapi-key": "d36f4588c5msh61ad8b784cc92d0p1e1eadjsn79df372055f9",
+        "x-rapidapi-key": f"{os.environ['fantastic_x-rapidapi-key']}",
         "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
     }
 

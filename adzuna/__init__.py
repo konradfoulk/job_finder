@@ -1,9 +1,11 @@
+from dotenv import load_dotenv
 from openai import OpenAI
 from .adzuna_jobs import *
 from bs4 import BeautifulSoup
 from .models import AiResponse
 from utils import output_to_csv
 
+load_dotenv()
 ai = OpenAI()
 
 
