@@ -28,7 +28,7 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
         querystring["ai_experience_level_filter"] = ai_experience
 
     headers = {
-        "x-rapidapi-key": f"{os.environ['fantastic_x-rapidapi-key']}",
+        "x-rapidapi-key": os.environ['fantastic_x-rapidapi-key'],
         "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
     }
 
