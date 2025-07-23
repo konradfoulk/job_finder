@@ -3,12 +3,13 @@ import os
 import requests
 from utils import output_to_csv
 
-load_dotenv()
+load_dotenv()  # load environment variables to use os.environ
 
 
 def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limit: int = 10, file_name: str = 'jobs'):
-    url = "https://active-jobs-db.p.rapidapi.com/active-ats-7d"
+    url = "https://active-jobs-db.p.rapidapi.com/active-ats-7d"  # api url
 
+    # define api parameters for api request
     querystring = {
         "limit": limit,
         "offset": "0",
@@ -32,9 +33,11 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
         "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
     }
 
+    # get data from api
     response = requests.get(url, headers=headers, params=querystring)
     data = response.json()
 
+    # format data into workable format
     jobs = []
     for i in data:
         job = {}
@@ -45,4 +48,5 @@ def find_jobs(query: str, ai_remote: str = None, ai_experience: str = None, limi
         job['url'] = i.get('url')
         jobs.append(job)
 
+    # output formated data to a csv
     output_to_csv(file_name, jobs)
