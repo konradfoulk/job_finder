@@ -37,7 +37,7 @@ To download this project, simply clone this repository onto your local machine.
 ---
 ### Configuration
 
-In order for your script to work, you'll need to do some configuration with the APIs yourself. This project uses the Adzuna, Fantastic.jobs, and OpenAI APIs to work. In order to use them yourself, you'll need to go to each of those organizations and get an API key and an app ID (for Adzuna only). Once you have your API keys and your Adzuna app ID, write each value to a .env file as follows:
+In order for your script to work, you'll need to do some configuration with the APIs yourself. This project uses the Adzuna, Fantastic.jobs, and OpenAI APIs to work. In order to use them yourself, you'll need to go to each of those organizations and get an API key and an app ID (for Adzuna only). Once you have your API keys and your Adzuna app ID, write each value to a `.env` file as follows:
 
 ```
 OPENAI_API_KEY=your_api_key
@@ -46,12 +46,12 @@ adzuna_app_key=your_api_key
 fantastic_x-rapidapi-key=your_api_key
 ```
 
-Make sure the .env file is in the root folder of the repository and your code the scripts will work perfectly.
+Make sure the `.env` file is in the root folder of the repository and your code the scripts will work perfectly.
 
 ---
 ### How to use
 To run the project, simply navigate to the main.py file, and run the file with one or more of the following functions:
-```
+```python
 adzuna.find_jobs('keywords')
 fantastic.find_jobs('keywords')
 ```
@@ -74,7 +74,7 @@ The Fantastic.jobs script uses their `advanced_title_filter`. This allows for mo
 
 #### Other parameters:
 
-Additional functionality is accessed by utilizing the additional parameters in the `find_jobs()` and `find_jobs()` functions.
+Additional functionality is accessed by utilizing the additional parameters in the `find_jobs()` and `find_qualified_jobs()` functions.
 
 To filter for keywords you don't want:
 - Use the `query_not` parameter with Adzuna and the `advanced_title_filter` format in the query for Fantastic.jobs
@@ -91,4 +91,4 @@ To set the name of the CSV output:
 
 Writing results:
 
-- If appending to an existing file, expect that the file should be formatted properly following the standards of a newly generated file for it to make sense
+- If appending to an existing file, expect that the file should be formatted properly following the standards of a newly generated file in order for it to make sense.
