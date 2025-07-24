@@ -40,10 +40,10 @@ To download this project, simply clone this repository onto your local machine.
 In order for your script to work, you'll need to do some configuration with the APIs yourself. This project uses the Adzuna, Fantastic.jobs, and OpenAI APIs to work. In order to use them yourself, you'll need to go to each of those organizations and get an API key and an app ID (for Adzuna only). Once you have your API keys and your Adzuna app ID, write each value to a .env file as follows:
 
 ```
-OPENAI_API_KEY=**your_api_key**
-adzuna_app_id=**your_app_key**
-adzuna_app_key=**your_api_key**
-fantastic_x-rapidapi-key=**your_api_key**
+OPENAI_API_KEY=your_api_key
+adzuna_app_id=your_app_key
+adzuna_app_key=your_api_key
+fantastic_x-rapidapi-key=your_api_key
 ```
 
 Make sure the .env file is in the root folder of the repository and your code the scripts will work perfectly.
