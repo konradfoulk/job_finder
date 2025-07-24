@@ -1,6 +1,6 @@
 # Job Finder
 ### Output a CSV of job listings with a Python script using job search engine and job database APIs.
-[Key Features](#key-features), [Download](#download), [Configuratoin](#configuration), [How to use](#how-to-use)
+[Key Features](#key-features) - [Download](#download) - [Configuratoin](#configuration) - [How to use](#how-to-use)
 
 This project will create or append a list of jobs sourced from the Adzuna or Fantastic.jobs APIs to a new or existing CSV file. With the scripts provided, you can search for jobs using relevant keywords, automatically qualify jobs with AI, and view the results in a simple spreadsheet to start your job search and make it easy.
 
