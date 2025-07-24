@@ -50,7 +50,9 @@ Make sure the `.env` file is in the root folder of the repository and your code 
 
 ---
 ### How to use
+
 To run the project, simply navigate to the main.py file, and run the file with one or more of the following functions:
+
 ```python
 adzuna.find_jobs('keywords')
 fantastic.find_jobs('keywords')
@@ -70,7 +72,6 @@ The Fantastic.jobs script uses their `advanced_title_filter`. This allows for mo
 | Remote status    | `ai_remote` parameter `True` or `False`               | `ai_remote` parameter `"On-site"`,`"Hybrid"`,`"Remote OK"`,`"Remote Solely"`, delimit by `,` to filter for multiple job types |
 | Experience Level | `ai_experience` parameter `"entry"`, `"mid"`, or `"senior"` | `ai_experience` parameter `"0-2"`,`"2-5"`,`"5-10"`,`"10+"`, delimit by `","` to filter for multiple job types |
 |                  |                                                       | See the [Fantasic.jobs](https://rapidapi.com/fantastic-jobs-fantastic-jobs-default/api/active-jobs-db) documentation for more details |
-
 
 #### Other parameters:
 
