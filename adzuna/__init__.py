@@ -10,7 +10,7 @@ ai = OpenAI()  # initialize OpenAI client
 
 
 # one function to query Adzuna api and output jobs
-def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'jobs'):
+def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, file_name: str = 'jobs'):
     '''
     *The Adzuna API paginates it's results. Therefore, in order to get more results you must query more pages.
     Each page has a default number of results per page of 50. This is the maximum.
@@ -19,12 +19,12 @@ def find_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, nam
 
     results = get_jobs(params, pages)
     jobs = format_job_list(results)
-    output_to_csv(name, jobs)
+    output_to_csv(file_name, jobs)
 
 # queary api, qualify results using ai, output qualified jobs
 
 
-def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, name: str = 'ai_jobs', ai_remote: bool = False, ai_experience: str = 'mid'):
+def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: int = 7, file_name: str = 'ai_jobs', ai_remote: bool = False, ai_experience: str = 'mid'):
     params = update_params(query, query_not, age)
     results = get_jobs(params, pages)
 
@@ -63,7 +63,7 @@ def find_qualified_jobs(query: str, query_not: str = '', pages: int = 1, age: in
             ai_results.append(i)
 
     jobs = format_job_list(ai_results)
-    output_to_csv(name, jobs)
+    output_to_csv(file_name, jobs)
 
 
 # find_jobs finds jobs for the us and outputs a CSV file as well as statuses for failed searches
